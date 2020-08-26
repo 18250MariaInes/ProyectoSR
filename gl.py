@@ -589,6 +589,8 @@ class Render(object):
                 pVertex[1][0] / pVertex[3][0] ,
                 pVertex[2][0]  / pVertex[3][0] )
         
+        print(pVertex)
+        
         return pVertex
 
     def dirTransform(self, vertex, vMatrix):#transform para las normales
