@@ -57,7 +57,7 @@ class Render(object):
         self.curr_color = WHITE
         self.curr_color_bg=BLACK
         self.glCreateWindow(width, height)
-        self.lightx=0
+        self.lightx=1
         self.lighty=0
         self.lightz=1
         self.active_texture = None
