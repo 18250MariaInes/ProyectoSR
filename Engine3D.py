@@ -50,7 +50,7 @@ r.loadModel('./models/marsRobot.obj',  (2,0,-5), (0.005,0.005,0.005),(0,90,0))
 
 #Mars Texture
 r.active_texture = Texture('./models/2k_mars.bmp')
-r.active_shader = gouraud
+r.active_shader = thermal
 
 #Mars Model
 r.loadModel('./models/earth.obj', (-4,0,-5), (0.002,0.002,0.002),(0,130,0))
@@ -64,7 +64,7 @@ r.loadModel('./models/earth.obj', (-1,0,-5), (0.003,0.003,0.003),(0,130,0))
 
 #jupiter Texture
 r.active_texture = Texture('./models/2k_jupiter.bmp')
-r.active_shader = gouraud
+r.active_shader = static_jupiter
 
 #jupiter Model
 r.loadModel('./models/earth.obj', (3,0,-5), (0.004,0.004,0.004),(0,130,0))
