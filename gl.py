@@ -2,7 +2,7 @@
 Maria Ines Vasquez Figueroa
 18250
 Gráficas
-SR6 Transformations
+Proyecto Software Rendering
 Funciones
 """
 import struct
@@ -30,8 +30,10 @@ def dword(d):
 
 def color(r, g, b):
     #return bytes([b, g, r])
-    return bytes([int(b * 255), int(g * 255), int(r * 255)])
-
+    try:
+        return bytes([int(b * 255), int(g * 255), int(r * 255)])
+    except:
+        pass
 def baryCoords(Ax, Bx, Cx, Ay, By, Cy, Px, Py):
     # u es para la A, v es para B, w para C
     try:
@@ -284,7 +286,10 @@ class Render(object):
 
         for x in range(self.height):
             for y in range(self.width):
+                #try:
                 archivo.write(self.pixels[x][y])
+                """except:
+                    continue"""
 
 
         archivo.close()

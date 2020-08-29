@@ -236,7 +236,7 @@ def thermal(render, **kwargs):
 
     #print(prob)
     if intensity > 0 and intensity <= 0.33 :
-        return 0, 0, b
+        return 0, g, 0
     elif intensity > 0.33 and intensity <= 0.66:
         return r, g, 0
     elif intensity>0.66 and intensity<=1:
@@ -433,7 +433,7 @@ def stripes_neptune(render, **kwargs):
     r *= intensity
     #print(render.frobenius(normal))
     if intensity > 0:
-        if y%15<5:
+        if y%15<1:
             return r,g,round((y%50)/50)
         return r,g,b
     else:
