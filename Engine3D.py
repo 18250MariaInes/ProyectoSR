@@ -23,7 +23,7 @@ r = Render(width,height)
 for x in range (2,width-2):
     for y in range (2, height-2):
         
-        size=random.randint(1,1200)
+        size=random.randint(1,2400)
         if size==1:
             r.glVertex_coord(x,y)
         elif size==2:
@@ -54,7 +54,8 @@ r.loadModel('./models/space-shuttle-orbiter.obj', (3,-1,-4), (0.002,0.002,0.002)
 
 #astro texture
 r.active_texture = Texture('./models/suit.bmp')
-r.active_shader = toon #cambiar a gouraud
+r.active_normalMap = Texture('./models/normal_suit.bmp')
+r.active_shader = normalMap
 
 #Astro
 r.loadModel('./models/astronaute.obj', (-1,1,-5), (0.5,0.5,0.5),(0,0,0))
@@ -90,6 +91,15 @@ r.active_shader = static_jupiter
 
 #jupiter Model
 r.loadModel('./models/earth.obj', (3,0,-6), (0.004,0.004,0.004),(0,130,0))
+
+"""#astro texture
+r.active_texture = Texture('./models/suit.bmp')
+r.active_normalMap = Texture('./models/normal_suit.bmp')
+r.active_shader = normalMap#cambiar a gouraud
+
+
+#Astro
+r.loadModel('./models/astronaute.obj', (-1,-2,-5), (2,2,2),(0,0,0))"""
 
 #high angle
 #r.lookAt(posModel, (0,2,0))

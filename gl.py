@@ -63,6 +63,7 @@ class Render(object):
         self.lighty=0
         self.lightz=1
         self.active_texture = None
+        self.active_normalMap = None
         self.active_texture2 = None
         self.active_shader = None
         """self.camPosition=(0,0,0)
@@ -507,6 +508,12 @@ class Render(object):
         res.append(y0-y1)
         res.append(z0-z1)
         return res
+    #Realiza la resta entre 2 listas de 2 entradas
+    def subtractTwo(self, x0, x1, y0, y1):
+        res=[]
+        res.append(x0-x1)
+        res.append(y0-y1)
+        return res
     #realiza producto cruz entre dos listas
     def cross(self, v0, v1):
         res=[]
@@ -539,6 +546,9 @@ class Render(object):
     #realiza producto punto entre la matriz y la luz
     def dot(self, normal, lightx, lighty, lightz):
         return (normal[0]*lightx+normal[1]*lighty+normal[2]*lightz)
+    
+    def multiN(self, c, normal):
+        return (normal[0]*c,normal[1]*c,normal[2]*c)
     
     def dot4(self, matrix1, matrix2):
         return (matrix1[0]*matrix2[0]+matrix1[1]*matrix2[1]+matrix1[2]*matrix2[2]+matrix1[3]*matrix2[3])
